@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { authAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-
+const API = import.meta.env.VITE_API_URL;
+axios.post(`${API}/api/auth/register`, formData)
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
